@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 public class EDirectory {
 	//attributes
-	private int number;
+	private String number;
 	private String name;
 	private String hyperLink;
 
-	public int getNumber() {
+	public String getNumber() {
 		return number;
 	}
 
-	public void setNumber(int number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 
@@ -33,7 +33,7 @@ public class EDirectory {
 	}
 
 	public void read(Scanner scanner) {
-		this.number = scanner.nextInt();
+		this.number = scanner.next();
 		this.name = scanner.next();
 		this.hyperLink = scanner.next();
 	}

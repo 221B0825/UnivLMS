@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.util.Vector;
 
 import javax.swing.JTable;
-import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
 import control.CLecture;
@@ -24,35 +23,49 @@ public class LectureTable extends JTable {
 		// set attributes
 
 		// set model
-		String[] columnNames = { "강좌명", "담당 교수", "학점", "요일 및 시간", };
+		String[] columnNames = { "강좌 번호","강좌명", "담당 교수", "학점", "요일 및 시간", };
 
-		this.tableModel = new DefaultTableModel(null, columnNames);
+		// table 수정 불가능
+		this.tableModel = new DefaultTableModel(columnNames, 0) {
+			private static final long serialVersionUID = 1L;
+			public boolean isCellEditable(int r, int c) {
+				return false;
+			}
+		};
 		this.setModel(this.tableModel);
 
 		// service
 		this.cLecture = new CLecture();
 
 	}
-
-	public Vector<ELecture> getSelectedLectures() {
-		return null;
-	}
+	
+	// -------------------------------------------------------------------------------------------------
 
 	public void refresh(String fileName) throws FileNotFoundException {
 		this.eLectures = this.cLecture.getItems("data\\" + fileName);
-
 		this.tableModel.setRowCount(0);
 		for (ELecture eLecture : eLectures) {
 			Vector<String> row = new Vector<String>();
+			row.add(eLecture.getNumber());
 			row.add(eLecture.getName());
 			row.add(eLecture.getProfessorName());
 			row.add(eLecture.getCredit());
 			row.add(eLecture.getTime());
-			this.tableModel.addRow(row);
+			tableModel.addRow(row);
 		}
 
 		this.updateUI();
-
 	}
 
+	// -------------------------------------------------------------------------------------------------
+	
+	public Vector<ELecture> getSelectedLectures() {
+		Vector<ELecture> selection = new Vector<ELecture>();
+		for (int i = 0; i < this.getRowCount(); i++) {
+			if (this.isRowSelected(i)) {
+				selection.add(this.eLectures.get(i));
+			}
+		}
+		return selection;
+	}
 }

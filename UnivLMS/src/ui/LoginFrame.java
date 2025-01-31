@@ -15,13 +15,13 @@ public class LoginFrame extends JFrame {
 	public LoginFrame(ActionListener actionHandler) throws FileNotFoundException {
 
 		this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
-		this.setLocation(100, 200);
+		this.setLocation(100, 100);
 		this.setSize(590, 500);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		this.loginPanel = new LoginPanel(actionHandler);
 		this.add(this.loginPanel);
-
+	
 	}
 
 }

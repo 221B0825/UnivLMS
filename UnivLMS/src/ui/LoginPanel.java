@@ -1,8 +1,6 @@
 package ui;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -13,20 +11,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import javax.swing.Box;
-import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.KeyStroke;
-
-import control.CLogin;
-import main.Main;
 
 public class LoginPanel extends JPanel {
 
@@ -41,20 +33,21 @@ public class LoginPanel extends JPanel {
 	private String userId;
 	private String password;
 
-	// private ActionHandler actionHandler;
-
 	private void read(Scanner scanner) {
 		this.userId = scanner.next();
 		this.password = scanner.next();
 	}
 
 	public LoginPanel(ActionListener actionHandler) {
+		// LoginPanel 설정
 		this.textPanel = new JPanel();
 		this.textFieldPanel = new JPanel();
 		this.buttonPanel = new JPanel();
 		this.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
 		this.setPreferredSize(new Dimension(580, 480));
 		this.setBackground(Color.WHITE);
+
+		// -------------------------------------------------------------------------------------------------
 
 		// textPanel 설정
 		textPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
@@ -78,6 +71,8 @@ public class LoginPanel extends JPanel {
 		textPanel.add(passwordText);
 
 		this.add(textPanel);
+
+		// -------------------------------------------------------------------------------------------------
 
 		// textFieldPanel 설정
 		textFieldPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
@@ -113,6 +108,8 @@ public class LoginPanel extends JPanel {
 
 		this.add(textFieldPanel);
 
+		// -------------------------------------------------------------------------------------------------
+
 		// buttonPanel 설정
 		buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
 		buttonPanel.setPreferredSize(new Dimension(110, 350));
@@ -138,24 +135,26 @@ public class LoginPanel extends JPanel {
 
 	}
 
-	public boolean authenticate(ActionEvent event) {
+	public boolean authenticate(ActionEvent event) throws FileNotFoundException {
 
 		String userId = userTextField.getText();
 		String password = passwordField.getText();
-		try {
-			Scanner scanner = new Scanner(new File("login//login"));
-			while (scanner.hasNext()) {
-				this.read(scanner);
-				if (this.userId.equals(userId) && this.password.equals(password)) {
-					return true;
-				} else {
-					return false;
-				}
+
+		Scanner scanner = new Scanner(new File("login/login"));
+		while (scanner.hasNext()) {
+			this.read(scanner);
+			if (this.userId.equals(userId) && this.password.equals(password)) {
+				scanner.close();
+				return true;
 			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
 		}
 		return false;
+
 	}
+
+	public String getUserId() {
+		return userId;
+	}
+
 
 }
