@@ -76,5 +76,5 @@ Using Java in 2019
 ## 📧 Contact
 - **이름**: Eunseo Yu  
 - **이메일**: eunseoyu0825@gmail.com  
-- **GitHub**: [221b0825](https://github.com/221b0825)  
+- **GitHub**: [221B0825](https://github.com/221B0825)  
 
