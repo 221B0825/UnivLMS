@@ -6,21 +6,24 @@ Using Java in 2019
 [![Last Commit](https://img.shields.io/github/last-commit/221b0825/UnivLMS)](https://github.com/221b0825/UnivLMS/commits/main)
 
 ## 📚 Introduction
-
-| 항목   | 내용 |
-|--------|--------------------------------|
-| **과목명** | 절차적 사고와 프로그래밍 |
-| **교수명** | 최성운 교수님 |
-| **학기** | 2019년 1학기 |
-| **과목코드** | 5842 |
-| **학년** | 1학년 |
-| **시간** | 월/수 09:00 ~ 10:15 |
-| **장소** | S1350 |
+> 이 프로젝트는 Java를 사용하여 MVC 패턴을 이해하고, AWT를 통해 UI를 설계하며, 이벤트 처리에 대한 이해를 높이는 것을 목표로 합니다.
 
 ---
 
 ## 📸 Preview  
-<div align="center"> <img src="https://github.com/user-attachments/assets/75136c3b-e201-41fa-a543-41d13dd4cb9a" alt="Project Preview" height="500px"> <p><em>로그인 화면</em></p> </div>
+<table>
+  <tr>
+    <td width="30%">
+      <img src="https://github.com/user-attachments/assets/75136c3b-e201-41fa-a543-41d13dd4cb9a" alt="Project Login Preview" width="100%">
+      <p align="center"><em>로그인 화면</em></p>
+    </td>
+    <td width="70%">
+      <img src="https://github.com/user-attachments/assets/50fd05ca-3911-4948-b76d-24a3814dc396" alt="Project Main Preview" width="100%">
+      <p align="center"><em>메인 화면</em></p>
+    </td>
+  </tr>
+</table>
+
 
 ---
 
