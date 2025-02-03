@@ -18,7 +18,7 @@ Using Java in 2019
       <p align="center"><em>로그인 화면</em></p>
     </td>
     <td width="70%">
-      <img src="https://github.com/user-attachments/assets/50fd05ca-3911-4948-b76d-24a3814dc396" alt="Project Main Preview" width="100%">
+      <img src="https://github.com/user-attachments/assets/afdf2ab0-3964-4353-98e8-687ad73ae74a" alt="Project Main Preview" width="100%">
       <p align="center"><em>메인 화면</em></p>
     </td>
   </tr>
