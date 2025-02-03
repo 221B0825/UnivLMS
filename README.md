@@ -6,7 +6,7 @@ Using Java in 2019
 [![Last Commit](https://img.shields.io/github/last-commit/221b0825/UnivLMS)](https://github.com/221b0825/UnivLMS/commits/main)
 
 ## 📚 Introduction
-> 이 프로젝트는 Java를 사용하여 MVC 패턴을 이해하고, AWT를 통해 UI를 설계하며, 이벤트 처리에 대한 이해를 높이는 것을 목표로 합니다.
+> 이 프로젝트는 **Java**를 사용하여 MVC 패턴을 이해하고, **AWT**를 통해 UI를 설계하며, 이벤트 처리에 대한 이해를 높이는 것을 목표로 합니다.
 
 ---
 
